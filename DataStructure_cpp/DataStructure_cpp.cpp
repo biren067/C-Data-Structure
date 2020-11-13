@@ -723,6 +723,76 @@ void show_list(const list<int>& lst){
 		cout << *it << endl;
 }
 //******************************REVISION END Linked List
+
+//******************************REVISION START VECTOR LIST
+
+//******************************REVISION END VECTOR LIST
+
+//******************************REVISION START String
+/*
+	length();
+	append("bond"),	append("bond",0,2);//bo
+	substr(2),substr(2,len);
+	erase(it1,it2),erase(i,j);
+	push_back(),pop_back()
+	front(),back()
+	begin(),end()
+	replace(0,len,"birendra") //bire
+	c_str(); const char*
+	[i]
+	at(),
+	insert(index,"bond");
+	clear(),empty()
+	find(),find_start)of(),find_last_of(),string::npos
+	compare()
+	getline();
+
+*/
+void revision_string(){
+	string name = "birendra kumar";
+	cout << "length of string \'birendra kumar\' :" << name.length() << endl;;
+	//................insert,find
+	cout << "Insert bond as middle name :" << name.insert(name.find(" "), " bond") << endl;
+	cout << name << endl;
+	//.................substr,find,length
+	cout << "substring, fetch bond from name: " << name.substr(name.find("bond"), string("bond").length()) << endl;
+	cout << name << endl;
+	//.........replace,length
+	cout << "Replace \'birendra\' to \'james\' :" << name.replace(0, string("birendra").length(), "James") << endl;
+	cout << name << endl;
+	//.........Erase,find,length
+	name.erase(name.find(" kumar"), string(" kumar").length());
+	cout << name << endl;
+	//.........append
+	name.append(" is back. ");
+	cout << name << endl;
+	name.append("What do you think", 0, 4);
+	cout << name << endl;
+	//........erase(it1,it2),begin(),
+	name.erase(name.begin(), name.begin() + 2);
+	cout << name << endl;
+	//.................compare
+	string fname("james");
+	cout << fname.compare("james") << endl;
+	//..............at(),[]
+	for (int i = 0; i < fname.length(); i++){
+		cout << fname[i] << " " << fname.at(i) << endl;
+	}
+	//................font,back
+	cout << "use front() function on fname : "<<fname.front() << endl;
+	cout << "use back() function on fname : "<<fname.back() << endl;
+	cout << "is fname empty: " << fname.empty() << endl;
+	fname.clear();
+	cout << "clear fname  " << fname.length() << endl;
+	//...............more on find()
+	string last("bond");
+	if (last.find("ba") != string::npos)
+		cout << "\'ba\' is PRESENT on \'bond\' " << endl;
+	else
+		cout << "\'ba\' is NOT PRESENT on \'bond\'  " << endl;
+}
+
+//******************************REVISION END String
 int main()
 {
 	//vectorLearn();
@@ -760,7 +830,8 @@ int main()
 	// find(it1,it2,val) use in list to find element 
 
 	//------------------------Revision
-	revision_list();
+	//revision_list();
+	revision_string();
 
 	cin.get();
 	return 0;
@@ -792,8 +863,8 @@ priority_queue->push(),pop(),top(),size(),empty()
 stack->pop(),push(),top(),size()
 
 set->insert(),size(),
-erase(key),erase(it),erase(it1,it2)
-iterator::find(val),int count(11);
+	erase(key),erase(it),erase(it1,it2)
+	iterator::find(val),int count(11);
 
 multiset---> multiple value exit with sorted order     //PENDING
 erase(key),erase(it),
@@ -803,24 +874,24 @@ unordered_set->
 unordered_multiset->
 
 map->insert(dt1,dt2),size(),empty(),mp[],
-erase(key),erase(it),erase(it1,it2)
-find(),,int::count()
+	erase(key),erase(it),erase(it1,it2)
+	find(),,int::count()
 
 multimap->sorted order,
-erase(key),erase(it),erase(it1,it2)
-count(),find(key)
+		erase(key),erase(it),erase(it1,it2)
+		count(),find(key)
 
-string-> length(),str.copy(ch[80],14,0);, begin,end,rbegin,rend,
+string-> length(), begin,end,rbegin,rend,
+		str.copy(ch[80],14,0),
 		getline(),push_back,pop_back,
 		str.compare(str)::int,
-		find(str),find(str,start),find_last_of(str),find_first_of(str),rfind(str)
+		find(str),find(str,start),find_last_of(str),find_first_of(str),rfind(str),str.find("bond")!=string::npos
 		insert(9,"kumar");
 		clear(),empty()
 		at(index)
 		front,back
 		c_str::const char*
 		append("birendra",0,3);
-		str.find("bond")!=string::npos
 		substr(start_index=2,length=5)
 		erase(2,5)
 		erase(it1,it2);
