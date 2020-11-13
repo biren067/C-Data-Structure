@@ -572,19 +572,172 @@ void LevelWithMaximumNodes(struct Node*)
 {
 
 }
+void stringLearn(){
+	string str = "birendra kumar";
+	//...length
+	cout << str.length() << endl;
+	//...replace
+	str.replace(0,8,"bond");
+	cout << str << endl << endl;
+	//...substr
+	string st1 = str.substr(str.length() - 5);
+	cout << str << " " << st1 << endl;
+	string st2 = str.substr(str.length() - 5, 3);
+	cout << str << " " << st2 << endl;
+	//....erase
+	str.erase(str.begin(), str.begin() + 4);
+	cout << str << endl;
+	str.erase(0, 2);
+	cout << str << endl;
+	//....append
+	string str_append = "james k";
+	str.append(str_append, 3, str_append.length());
+	cout << str << endl;
+	//....insert
+	string str_insert = "james bond james";
+	str.insert(0, str_insert);
+	cout << str << endl;
+	//....find
+	int n = str.find('bond');
+	int n2 = str.find('bond',6);
+	if (n != 0) cout << "found at " << n; 
+	else cout << "not found";
+	cout << endl;
+	if (n2 != 0) cout << "found at " << n2;
+	else cout << "not found";
+	cout << endl;
+	//...iterate
+	for (int i = 0; i < str.length(); i++)
+		cout << str.at(i);
+	cout << endl;
+    //.....clear and empty
+	cout << str.empty() << endl; //false->0 true =1
+	str.clear();
+	cout << str.empty() << endl;
+	if (1) cout << 1;
+	else cout << 0;
+	cout << endl;
+}
+//*******************************REVISION START Linked List
+void show_list(const list<int>&);
+void revision_list(){
+	/*
+		push_back();
+		push_front();
+		pop_back();
+		pop_front();
+		insert(it,val);
+		empty()
+		clear()
+		size()
+		begin()
+		rbegin()
+		rend()
+		cbegin()
+		cend()
+		crbegin()
+		crend()
+		end()
+		erase(it)
+		erase(it1,it2)
+		find() //algo from algorithm library
+		front()
+		back()
+		remove()
+		remove_if()
+		reverse()
+		sort()
+	*/
+	list<int> lst;
+	lst.push_back(20);
+	lst.push_back(21);
+	lst.push_front(10);
+	lst.push_front(15);
+	lst.push_back(25);
+	auto it = lst.begin();
+	advance(it, 1);
+	lst.insert(it, 12);
+	for (auto it = lst.begin(); it != lst.end(); it++){
+		cout << *it << endl;
+	}
+	cout << "Size is " << lst.size() << endl;
+	cout << "is list empty? " << lst.empty() << endl;
+	cout << "Clearing the list--" << endl;
+	//lst.clear();
+	cout << "Size is after clearing: " << lst.size() << endl;
+	cout << "===========Reverse iterate========" << endl;
+	list<int>::reverse_iterator rit;
+	for (rit = lst.rbegin(); rit != lst.rend(); rit++){
+		cout << *rit << endl;
+	}
+	cout << "==========Iterator constant=======" << endl;
+	list<int>::const_iterator cit;
+	for (cit = lst.cbegin(); cit != lst.cend(); cit++){
+		//--Error because it is constant variable
+		//*cit = *cit + 10; 
+		cout << *cit << endl;
+	}
+	cout << "==========Reverse Constant Iterator============" << endl;
+	list<int>::const_reverse_iterator crit;
+	for (crit = lst.crbegin(); crit != lst.crend(); crit++){
+		//--Error because it is constant variable
+		//*crit = *crit + 10;
+		cout << *crit << endl;
+	}
+	cout << "Reversing the element" << endl;
+	lst.reverse();
+	show_list(lst);
+	cout << "Sort the element" << endl;
+	lst.insert(lst.begin(), 30);
+	lst.sort();
+	show_list(lst);
+	cout << "Sort in Decending order" << endl;
+	lst.sort([](int a, int b){return a > b; });
+	show_list(lst);
+	cout << "show the front element " << lst.front() << endl;
+	cout << "show the last element " << lst.back() << endl;
+	cout << "Finding the element " << endl;
+	auto find_it = find(lst.begin(), lst.end(), 20);
+	if (find_it != lst.end())
+		cout << "Item is present" << endl;
+	else
+		cout << "Item is Not Present" << endl;
+	//lst.erase(find_it);
+	list<int>::iterator it2=find_it;
+	advance(it2, 2);
+	show_list(lst);
+	lst.erase(find_it, it2);
+
+	cout << "Erased 20 + 2 item from list" << endl;
+	show_list(lst);
+	cout << "Remove element" << endl;
+	lst.remove(21);
+	show_list(lst);
+	cout << "Remove_if condition" << endl;
+	lst.remove_if([](int a){ return a % 3 == 0;  });
+	show_list(lst);
+}
+void show_list(const list<int>& lst){
+	cout << "===Display list elememt===" << endl;
+	for (auto it = lst.begin(); it != lst.end(); it++)
+		cout << *it << endl;
+}
+//******************************REVISION END Linked List
 int main()
 {
 	//vectorLearn();
 	//stackLearn();
 	//queueLearn();
 	//listLearn();
-	setLearn();
+	//setLearn();
 	//mapLearn();
 	//dequeLearn();
 	//Singleton_designPattern();
 	//ObserverDesingPattern();
 	//max_in_array_loop();
 	//max_in_array_recursion();
+	//---------------------------STRING
+	//stringLearn();
 	//---------------------------TREE
 	//create_tree();
 	//construct_binary_search_tree();  //-------PENDING
@@ -602,6 +755,12 @@ int main()
 	//largest_number_less_than_or_equal_to_N_(); //--PENDING
 	//floor_and_ceil_value_from_tree()
 	//--------------------------GRAPH
+	//-------------------------Algorithm in C++
+	// advance(it,n);
+	// find(it1,it2,val) use in list to find element 
+
+	//------------------------Revision
+	revision_list();
 
 	cin.get();
 	return 0;
@@ -650,6 +809,23 @@ find(),,int::count()
 multimap->sorted order,
 erase(key),erase(it),erase(it1,it2)
 count(),find(key)
+
+string-> length(),str.copy(ch[80],14,0);, begin,end,rbegin,rend,
+		getline(),push_back,pop_back,
+		str.compare(str)::int,
+		find(str),find(str,start),find_last_of(str),find_first_of(str),rfind(str)
+		insert(9,"kumar");
+		clear(),empty()
+		at(index)
+		front,back
+		c_str::const char*
+		append("birendra",0,3);
+		str.find("bond")!=string::npos
+		substr(start_index=2,length=5)
+		erase(2,5)
+		erase(it1,it2);
+		replace(start=0,len=4,'Birendra");
+		
 ======================================================================================================*/
 //10-11-2020
 /*
