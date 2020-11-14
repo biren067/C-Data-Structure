@@ -13,7 +13,9 @@
 #include <deque>
 #include <iterator>
 #include <chrono>
+#include "Algorithm.h"
 using namespace std;
+//using namespace Learn_coding;
 using namespace std::chrono;
 //======================vector Learning
 void iterate_reverse();
@@ -793,6 +795,9 @@ void revision_string(){
 }
 
 //******************************REVISION END String
+
+
+
 int main()
 {
 	//vectorLearn();
@@ -831,7 +836,9 @@ int main()
 
 	//------------------------Revision
 	//revision_list();
-	revision_string();
+	//revision_string();
+	//------------------------Coding problem
+	Algorithm algo;
 
 	cin.get();
 	return 0;
