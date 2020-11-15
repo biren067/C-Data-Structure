@@ -14,6 +14,7 @@
 #include <iterator>
 #include <chrono>
 #include "Algorithm.h"
+#include "Stl.h"
 using namespace std;
 //using namespace Learn_coding;
 using namespace std::chrono;
@@ -838,8 +839,8 @@ int main()
 	//revision_list();
 	//revision_string();
 	//------------------------Coding problem
-	Algorithm algo;
-
+	//Algorithm algo;
+	Stl stl;
 	cin.get();
 	return 0;
 }
