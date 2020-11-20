@@ -15,6 +15,7 @@ public:
 
 	void find_closest();
 	void find_min_sum();
+	void max_range_of_sum();
 
 	~Algorithm();
 };

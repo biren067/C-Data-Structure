@@ -5,7 +5,19 @@
 Algorithm::Algorithm()
 {
 	//find_closest();
-	find_min_sum(); //in matrix --Good one
+	//find_min_sum(); //in matrix --Good one
+	max_range_of_sum();
+}
+void Algorithm::max_range_of_sum(){
+
+	int ar[] = { 4, 5, 6, 1, 4, 6, 5 };
+	int res = 0;
+	for (int i = 0; i < 7; i++){
+		res = res ^ ar[i];
+		cout << res << endl;
+	}
+	cout << endl << endl<< "Unique Element is " << res;
+
 }
 //========================START min sum
 void Algorithm::find_min_sum(){

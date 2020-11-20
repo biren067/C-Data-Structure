@@ -14,7 +14,6 @@
 #include <iterator>
 #include <chrono>
 #include "Algorithm.h"
-#include "DesingPattern.h"
 #include "Stl.h"
 using namespace std;
 //using namespace Learn_coding;
@@ -809,7 +808,7 @@ int main()
 	//setLearn();
 	//mapLearn();
 	//dequeLearn();
-	Singleton_designPattern();
+	//Singleton_designPattern();
 	//ObserverDesingPattern();
 	//max_in_array_loop();
 	//max_in_array_recursion();
@@ -840,7 +839,7 @@ int main()
 	//revision_list();
 	//revision_string();
 	//------------------------Coding problem
-	//Algorithm algo;
+	Algorithm algo;
 	//Stl stl;
 	cin.get();
 	return 0;
