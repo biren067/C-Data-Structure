@@ -6,7 +6,28 @@ Algorithm::Algorithm()
 {
 	//find_closest();
 	//find_min_sum(); //in matrix --Good one
-	max_range_of_sum();
+	//max_range_of_sum();
+	second_highest_in_array();
+}
+void Algorithm::second_highest_in_array(){
+	int a[] = { 2, 17, 6, 2, 9, 5, 1 };
+	int max = a[0] < a[1] ? a[1] : a[0];
+	int sm = a[0] > a[1] ? a[1] : a[0];
+	cout << max << " " << sm << endl;
+	for (int i = 2; i < sizeof(a)/sizeof(int); i++){
+		if (max < a[i])
+		{
+			sm = max;
+			max = a[i];
+		}
+		else{
+			if (sm < a[i])
+				sm = a[i];
+		}
+	}
+	cout << "Max   :" << max << endl;
+	cout << "small :" << sm;
+
 }
 void Algorithm::max_range_of_sum(){
 
