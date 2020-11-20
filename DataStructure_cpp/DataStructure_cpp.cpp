@@ -14,6 +14,7 @@
 #include <iterator>
 #include <chrono>
 #include "Algorithm.h"
+#include "DesingPattern.h"
 #include "Stl.h"
 using namespace std;
 //using namespace Learn_coding;
@@ -237,12 +238,12 @@ Singleton* Singleton::singleton = NULL;
 int Singleton::count = 0;
 
 void Singleton_designPattern(){
-	Singleton* s = Singleton::getInstance();
-	s->print();
 	Singleton* s1 = Singleton::getInstance();
+	s1->print();
 	Singleton* s2 = Singleton::getInstance();
-	s->print();
 	s2->print();
+	Singleton* s3 = Singleton::getInstance();
+	s3->print();
 }
 //=================End singleton
 
@@ -808,7 +809,7 @@ int main()
 	//setLearn();
 	//mapLearn();
 	//dequeLearn();
-	//Singleton_designPattern();
+	Singleton_designPattern();
 	//ObserverDesingPattern();
 	//max_in_array_loop();
 	//max_in_array_recursion();
@@ -840,7 +841,7 @@ int main()
 	//revision_string();
 	//------------------------Coding problem
 	//Algorithm algo;
-	Stl stl;
+	//Stl stl;
 	cin.get();
 	return 0;
 }
