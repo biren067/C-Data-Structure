@@ -7,7 +7,32 @@ Algorithm::Algorithm()
 	//find_closest();
 	//find_min_sum(); //in matrix --Good one
 	//max_range_of_sum();
-	second_highest_in_array();
+	//second_highest_in_array();
+	//union_of_two_array(); //.....wrong
+	zeros_at_end();
+}
+void Algorithm::zeros_at_end(){
+	int ar[] = { 1, 0, 4, 0, 0, 9, 0, 8 };
+	int len = 8;
+	int last_index = 7;
+	int count = 0;
+	int i = 0;
+	while (i < (len - count)){
+		if (ar[i] == 0){
+			count += 1;
+			int temp = ar[i];
+			for (int j = i; j < last_index; j++){
+				ar[j] = ar[j + 1];
+			}
+			ar[last_index] = temp;
+			continue;
+		}
+		i += 1;
+	}
+	for (int i = 0; i < 8; i++)
+		cout << ar[i] << " ";
+	cout << endl;
+	cout << "Total no of shifted zeros is  : " << count;
 }
 void Algorithm::second_highest_in_array(){
 	int a[] = { 2, 17, 6, 2, 9, 5, 1 };
@@ -28,6 +53,47 @@ void Algorithm::second_highest_in_array(){
 	cout << "Max   :" << max << endl;
 	cout << "small :" << sm;
 
+}
+void Algorithm::union_of_two_array(){
+	int a1[] = { 1, 3, 4, 5, 7 };
+	int a2[] = { 2, 3, 5, 6 };
+	int *max, *sm;
+	if ( sizeof(a1) > sizeof(a2) ){
+		max = a1;
+		sm = a2;
+	}
+	else{
+		max = a2;
+		sm = a1;
+	}
+	int s = 4;// sizeof(sm);
+	int m = 5;// sizeof(max);
+	int len = sizeof(max);//+ sizeof(sm);
+	cout << len << endl;
+	cout << "{ ";
+	int j = 0;
+	int i = 0;
+	while(1)
+	{
+		if (max[i] > sm[j])
+		{
+			cout << sm[j] << ", "; j++;
+		}else if (max[i] < sm[j])
+		{
+			cout << max[i] << ", "; i++;
+		}else if (max[i] == sm[i])
+		{	
+			cout << max[i] << ", "; i += 1; j += 1;
+		}
+
+		
+		if( s <= j - 1 || m <= i - 1)
+			break;
+	}
+	while (i < sizeof(max)){
+		cout << max[i] << ", ";
+	}
+	cout << "}";
 }
 void Algorithm::max_range_of_sum(){
 

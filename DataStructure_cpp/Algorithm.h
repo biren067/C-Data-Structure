@@ -17,7 +17,8 @@ public:
 	void find_min_sum();
 	void max_range_of_sum();
 	void second_highest_in_array();
-
+	void union_of_two_array();
+	void zeros_at_end();
 	~Algorithm();
 };
 
