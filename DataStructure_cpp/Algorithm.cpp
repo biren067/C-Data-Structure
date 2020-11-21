@@ -9,7 +9,35 @@ Algorithm::Algorithm()
 	//max_range_of_sum();
 	//second_highest_in_array();
 	//union_of_two_array(); //.....wrong
-	zeros_at_end();
+	//zeros_at_end();
+	zeros_at_end_2();
+}
+void Algorithm::zeros_at_end_2(){
+	int temp=0,count=0;
+	int ar[] = {8,0,1,0,3,12 };
+	int right=0, left=0;
+	int len = sizeof(ar)/sizeof(ar[0]);
+	cout << "=================ORIGINAL ARRAY===============" << endl;
+	for (int i = 0; i < len; i++)
+		cout << ar[i] << " ";
+	cout << endl;
+	while (right < len){
+		if (ar[right] != 0){
+			if (ar[left] == 0)
+				count += 1;
+			temp = ar[right];
+			ar[right] = ar[left];
+			ar[left] = temp;
+			
+			left += 1;
+		}
+		right += 1;
+	}
+	cout << "=============RESULT===============" << endl;
+	for (int i = 0; i < len; i++)
+		cout << ar[i] << " ";
+	cout << endl;
+	cout << "Total no of shifted zeros is  : " << count;
 }
 void Algorithm::zeros_at_end(){
 	int ar[] = { 1, 0, 4, 0, 0, 9, 0, 8 };

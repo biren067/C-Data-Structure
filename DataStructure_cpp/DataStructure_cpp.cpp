@@ -15,6 +15,7 @@
 #include <chrono>
 #include "Algorithm.h"
 #include "Stl.h"
+#include "ObserverDesignPattern.h"
 using namespace std;
 //using namespace Learn_coding;
 using namespace std::chrono;
@@ -298,7 +299,7 @@ public:
 	}
 };
 
-void ObserverDesingPattern(){
+void ObserverDesingPattern_1(){
 	Car c;
 	Honda *honda = new Honda();
 	Maruti *maruti = new Maruti();
@@ -306,6 +307,9 @@ void ObserverDesingPattern(){
 	c.add_observer(maruti);
 	c.vehicleLawUpdate(1);
 	c.vehicleLawUpdate(90);
+}
+void ObserverDesingPattern_class(){
+	ObserverDesignPattern obDesignPattern;
 }
 //=================END Observer Desing Pattern
 //================START maximum in array with loop
@@ -809,7 +813,8 @@ int main()
 	//mapLearn();
 	//dequeLearn();
 	//Singleton_designPattern();
-	//ObserverDesingPattern();
+	//ObserverDesingPattern_1();
+	ObserverDesingPattern_class();
 	//max_in_array_loop();
 	//max_in_array_recursion();
 	//---------------------------STRING
