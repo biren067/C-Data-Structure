@@ -20,6 +20,7 @@ public:
 	void union_of_two_array();
 	void zeros_at_end();
 	void zeros_at_end_2();
+	void longestConsecutiveCharacter();
 	~Algorithm();
 };
 

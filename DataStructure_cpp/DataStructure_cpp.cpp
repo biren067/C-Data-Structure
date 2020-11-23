@@ -845,8 +845,8 @@ int main()
 	//revision_list();
 	//revision_string();
 	//------------------------Coding problem
-	//Algorithm algo;
-	MyThreading thd;
+	Algorithm algo;
+	//MyThreading thd;
 	//Stl stl;
 	cin.get();
 	return 0;

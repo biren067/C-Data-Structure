@@ -10,7 +10,30 @@ Algorithm::Algorithm()
 	//second_highest_in_array();
 	//union_of_two_array(); //.....wrong
 	//zeros_at_end();
-	zeros_at_end_2();
+	longestConsecutiveCharacter();
+	//zeros_at_end_2();
+}
+void Algorithm::longestConsecutiveCharacter(){
+	string str = "AABCDDDDBBBEA";
+	char max_char, cur, prev;
+	int count = 0;
+	int max = 0;
+	for (int i = 1; i < str.length(); i++){
+		cur = str.at(i);
+		prev = str.at(i - 1);
+		if (cur != prev){
+			prev = cur;
+			count = 1;
+		}
+		else{
+			count += 1;
+		}
+		if (max < count){
+			max = count;
+			max_char = cur;
+		}
+	}
+	cout << "Longest Consecutive character: " << max_char <<" : "<< max;
 }
 void Algorithm::zeros_at_end_2(){
 	int temp=0,count=0;
