@@ -16,6 +16,7 @@
 #include "Algorithm.h"
 #include "Stl.h"
 #include "ObserverDesignPattern.h"
+#include "MyThreading.h"
 using namespace std;
 //using namespace Learn_coding;
 using namespace std::chrono;
@@ -814,7 +815,7 @@ int main()
 	//dequeLearn();
 	//Singleton_designPattern();
 	//ObserverDesingPattern_1();
-	ObserverDesingPattern_class();
+	//ObserverDesingPattern_class();
 	//max_in_array_loop();
 	//max_in_array_recursion();
 	//---------------------------STRING
@@ -844,7 +845,8 @@ int main()
 	//revision_list();
 	//revision_string();
 	//------------------------Coding problem
-	Algorithm algo;
+	//Algorithm algo;
+	MyThreading thd;
 	//Stl stl;
 	cin.get();
 	return 0;

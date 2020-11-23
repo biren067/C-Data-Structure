@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorithm.h" />
+    <ClInclude Include="MyThreading.h" />
     <ClInclude Include="ObserverDesignPattern.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Stl.h" />
@@ -88,6 +89,7 @@
   <ItemGroup>
     <ClCompile Include="Algorithm.cpp" />
     <ClCompile Include="DataStructure_cpp.cpp" />
+    <ClCompile Include="MyThreading.cpp" />
     <ClCompile Include="ObserverDesignPattern.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
