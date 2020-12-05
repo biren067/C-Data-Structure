@@ -10,8 +10,27 @@ Algorithm::Algorithm()
 	//second_highest_in_array();
 	//union_of_two_array(); //.....wrong
 	//zeros_at_end();
-	longestConsecutiveCharacter();
+	//longestConsecutiveCharacter();
 	//zeros_at_end_2();
+	//reverseString();
+	second_highest_in_array2();
+}
+void Algorithm::reverseString(){
+	char * str = "birendra";
+	//cout << sizeof(str);
+	 reverseString1(str,8);
+	 cout << str;
+}
+void Algorithm::reverseString1(char *s, int n){
+	//int n = sizeof(s) / sizeof(char) - 1;
+	cout << s << endl;
+	int l =  n - 1;
+	for (int i = 0; i < n/2; i++){
+		char t = *(s + i);
+		*(s + i) = *(s + l);
+		*(s + l) = t;
+		l -= 1;
+	}
 }
 void Algorithm::longestConsecutiveCharacter(){
 	string str = "AABCDDDDBBBEA";
@@ -84,6 +103,27 @@ void Algorithm::zeros_at_end(){
 		cout << ar[i] << " ";
 	cout << endl;
 	cout << "Total no of shifted zeros is  : " << count;
+}
+void Algorithm::second_highest_in_array2(){
+	int ar[] = { 2, 17, 6, 12, 9, 5, 1 };
+	int f = ar[0];
+	int s = ar[1];
+	if (f>s)
+	{
+		f = ar[0]; s = ar[1];
+	}else{
+			f = ar[1]; s = ar[0];
+	}
+
+	for (int i = 2; i<7; i++){
+		if (f > ar[i] && s < ar[i])
+		{
+				s = ar[i];
+		}else if (ar[i] > f && ar[i] > s){
+				s = f; f = ar[i];
+		}
+	}
+	cout << "second " << s << endl;
 }
 void Algorithm::second_highest_in_array(){
 	int a[] = { 2, 17, 6, 2, 9, 5, 1 };
